@@ -1,0 +1,35 @@
+---
+import PhoneIcon from "@icons/phone.astro";
+---
+
+<section
+  class="w-full h-hero bg-[url('/hero-mobile.png')] md:bg-[url('/hero.png')] bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center gap-4 p-2 md:p-4 lg:p-6"
+>
+  <div class="logo">
+    <h1
+      class="font-bold text-3xl tracking-widest uppercase text-balance leading-relaxed text-center text-white bg:text-white"
+    >
+      Cambio de Baterías <strong class="text-[#f6c543]">Express</strong> 24H
+    </h1>
+  </div>
+  <div
+    class="w-full max-w-[600px] bg-black/50 text-center text-wrap text-xl p-4 text-white bg:text-white"
+  >
+    <p>
+      Servicio <strong class="text-[#f6c543]">urgente</strong> a domicilio
+    </p>
+    <p><strong>Madrid - Toledo y alrededores</strong></p>
+  </div>
+  <div class="w-full flex justify-center">
+    <a
+      class="text-white text-center bg-yellow-500 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-lg px-5 py-2.5 dark:bg-yellow-500 dark:hover:bg-yellow-500 focus:outline-none dark:focus:ring-yellow-500 uppercase flex items-center gap-x-2"
+      href="tel:+34604974571"
+    >
+      <span>Llama ya</span>
+      <PhoneIcon
+        size={24}
+        classSvg="icon icon-tabler icons-tabler-outline icon-tabler-phone"
+      />
+    </a>
+  </div>
+</section>

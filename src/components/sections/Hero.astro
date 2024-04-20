@@ -3,33 +3,70 @@ import PhoneIcon from "@icons/phone.astro";
 ---
 
 <section
-  class="w-full h-hero bg-[url('/hero-mobile.png')] md:bg-[url('/hero.png')] bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center gap-4 p-2 md:p-4 lg:p-6"
+    class="w-full h-hero bg-[url('/hero-mobile.png')] md:bg-[url('/hero.png')] bg-cover bg-center lg:bg-center bg-no-repeat flex flex-col justify-center items-center md:items-start p-2 md:p-4 lg:p-6"
 >
-  <div class="logo">
-    <h1
-      class="font-bold text-3xl tracking-widest uppercase text-balance leading-relaxed text-center text-white bg:text-white"
-    >
-      Cambio de Baterías <strong class="text-[#f6c543]">Express</strong> 24H
-    </h1>
-  </div>
-  <div
-    class="w-full max-w-[600px] bg-black/50 text-center text-wrap text-xl p-4 text-white bg:text-white"
-  >
-    <p>
-      Servicio <strong class="text-[#f6c543]">urgente</strong> a domicilio
-    </p>
-    <p><strong>Madrid - Toledo y alrededores</strong></p>
-  </div>
-  <div class="w-full flex justify-center">
-    <a
-      class="text-white text-center bg-yellow-500 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-lg px-5 py-2.5 dark:bg-yellow-500 dark:hover:bg-yellow-500 focus:outline-none dark:focus:ring-yellow-500 uppercase flex items-center gap-x-2"
-      href="tel:+34604974571"
-    >
-      <span>Llama ya</span>
-      <PhoneIcon
-        size={24}
-        classSvg="icon icon-tabler icons-tabler-outline icon-tabler-phone"
-      />
-    </a>
-  </div>
+    <div class="w-full lg:max-w-[80%] lg:mx-auto flex flex-col gap-4">
+        <div class="logo w-full max-w-[600px]">
+            <h1
+                class="font-bold text-3xl md:text-6xl tracking-widest uppercase text-balance leading-relaxed text-center text-white bg:text-white"
+            >
+                Cambio de Baterías <strong class="text-[#f6c543]"
+                    >Express</strong
+                >
+                <span>2</span><span>4</span><span>H</span>
+            </h1>
+        </div>
+        <div
+            class="w-full max-w-[600px] bg-black/50 text-center text-wrap text-xl p-4 text-white bg:text-white rounded-lg"
+        >
+            <p>
+                Servicio <strong class="text-[#f6c543]">urgente</strong> a domicilio
+            </p>
+            <p><strong>Madrid - Toledo y alrededores</strong></p>
+            <div class="w-full flex justify-center pt-3">
+                <a
+                    class="text-white text-center bg-yellow-500 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-lg px-5 py-2.5 dark:bg-yellow-500 dark:hover:bg-yellow-500 focus:outline-none dark:focus:ring-yellow-500 uppercase flex items-center gap-x-2"
+                    href="tel:+34604974571"
+                >
+                    <span>Llama ya</span>
+                    <PhoneIcon
+                        size={24}
+                        classSvg="icon icon-tabler icons-tabler-outline icon-tabler-phone"
+                    />
+                </a>
+            </div>
+        </div>
+    </div>
 </section>
+
+<style>
+    .logo span {
+        animation: glow 2.5s ease infinite;
+    }
+
+    @keyframes glow {
+        0%,
+        100% {
+            color: #fff;
+            text-shadow:
+                0 0 12px rgba(255, 0, 0, 0.815),
+                0 0 50px red,
+                0 0 100px red;
+        }
+        10%,
+        90% {
+            color: #fff;
+            text-shadow: none;
+        }
+    }
+
+    .logo span:nth-child(2) {
+        animation-delay: 0.25s;
+    }
+    .logo span:nth-child(3) {
+        animation-delay: 0.5s;
+    }
+    .logo span:nth-child(4) {
+        animation-delay: 0.75s;
+    }
+</style>

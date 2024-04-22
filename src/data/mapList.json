@@ -1,0 +1,14 @@
+[
+  {
+    "id": "#inicio",
+    "title": "Inicio"
+  },
+  {
+    "id": "#servicios",
+    "title": "Servicios"
+  },
+  {
+    "id": "#contacto",
+    "title": "Contacto"
+  }
+]

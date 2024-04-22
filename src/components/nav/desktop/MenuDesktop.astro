@@ -1,0 +1,42 @@
+---
+import MenuList from "@components/nav/MenuList.astro";
+
+import LlamaYaBtn from "@components/buttons/LlamaYaBtn.astro";
+import ThemeToggleBtn from "@components/buttons/ThemeToggleBtn.astro";
+---
+
+<div
+  id="light-blur--navbar-container"
+  class="group fixed top-6 flex h-12 items-center rounded-3xl border border-slate-200 bg-slate-100/60 pr-1.5 shadow-lg shadow-black/5 backdrop-blur-lg dark:border-slate-700 dark:bg-black/70 dark:shadow-black/10 lg:top-10"
+>
+  <div class="absolute inset-0 overflow-hidden rounded-full">
+    <div
+      id="light-blur--navbar"
+      class="absolute -bottom-3 -left-10 h-6 w-20 rounded-full bg-white/70 opacity-0 blur-lg transition-opacity duration-200 group-hover:opacity-100 dark:bg-white/30"
+    >
+    </div>
+  </div>
+  <ul class="relative flex items-center space-x-4 pl-4">
+    <MenuList />
+  </ul>
+  <div
+    class="relative ml-4 mr-6 flex h-5 items-center border-x border-slate-100/70 px-3 dark:border-slate-600"
+  >
+    <ThemeToggleBtn id="btn-theme--desktop" />
+  </div>
+  <LlamaYaBtn />
+</div>
+
+<script>
+  const lightBlurNavbarContainer = document.getElementById(
+    "light-blur--navbar-container"
+  );
+  const lightBlurNavbar = document.getElementById("light-blur--navbar");
+
+  // seguimiento del mouse en el contenedor del navbar
+  lightBlurNavbarContainer.addEventListener("mousemove", (e) => {
+    const x = e.clientX - lightBlurNavbarContainer.getBoundingClientRect().left;
+    const y = e.clientY - lightBlurNavbarContainer.getBoundingClientRect().top;
+    lightBlurNavbar.style.transform = `translate(${x}px, ${y}px)`;
+  });
+</script>

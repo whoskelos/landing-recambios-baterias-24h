@@ -1,0 +1,28 @@
+---
+import LlamaYaBtn from "@components/buttons/LlamaYaBtn.astro";
+import MenuList from "@components/nav/MenuList.astro";
+
+import ThemeToggleBtn from "@components/buttons/ThemeToggleBtn.astro";
+---
+
+<div
+  id="bg-menu"
+  class="hidden fixed inset-0 bg-white/40 backdrop-blur-lg dark:bg-black/20"
+>
+</div>
+<div
+  id="menuMobile"
+  class="fixed inset-x-4 mt-2 hidden flex-col items-center justify-between rounded-3xl border border-slate-200 bg-slate-200/50 p-4 py-6 shadow-lg shadow-black/5 dark:border-slate-700 dark:bg-black/70 dark:shadow-black/10 sm:inset-x-6 opacity-0 transition-opacity duration-500"
+>
+  <ul
+    class="relative flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
+  >
+    <MenuList />
+  </ul>
+  <LlamaYaBtn />
+  <div class="mt-6 relative flex h-5 items-center">
+    <div class="relative">
+      <ThemeToggleBtn id="btn-theme--mobile" />
+    </div>
+  </div>
+</div>

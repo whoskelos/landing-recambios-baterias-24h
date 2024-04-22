@@ -1,0 +1,18 @@
+---
+import list from "src/data/mapList.json";
+---
+
+{
+  list.map(({ id, title }) => {
+    return (
+      <li class="relative">
+        <a
+          class="relative flex h-7 items-center rounded px-2 font-bold focus:bg-white/10 focus:outline-none text-slate-600 hover:text-black dark:text-slate-300 dark:hover:text-white"
+          href={id}
+        >
+          {title}
+        </a>
+      </li>
+    );
+  })
+}

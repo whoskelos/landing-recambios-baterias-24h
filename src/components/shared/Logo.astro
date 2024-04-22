@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+
+import logoSvg from "@assets/svg/logo.svg";
+---
+
+<div
+  class="inline-flex items-center font-bold tracking-wider text-base md:text-xl lg:text-2xl gap-1"
+>
+  <Image
+    itemprop="logo"
+    src={logoSvg}
+    alt="Cambio de Baterías Express 24H"
+    class="w-10"
+    width={40}
+    height={40}
+    loading="eager"
+  />
+  <a href="/" class="text-[#f8f7f3] hover:text-[#f4f4f4]">
+    <h1 class="text-lg">
+      <span
+        itemprop="name"
+        class="flex flex-col leading-4 md:flex-row md:leading-none text-[#071c3b] dark:text-white sm:gap-1"
+        >Baterías<strong class="text-[#f6c543] uppercase">Express</strong
+        ></span>
+    </h1>
+  </a>
+</div>

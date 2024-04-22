@@ -3,12 +3,18 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/sections/Header.astro';
 import Hero from '../components/sections/Hero.astro';
 import BlurBackground from '@components/BlurBackground.astro';
+import SectionSeparator from '@components/shared/SectionSeparator.astro';
+import Overview from '@components/sections/Overview.astro';
 ---
 
 <Layout title="Recambio de Baterías Express - Servicio 24 Horas">
 	<BlurBackground />
 	<Header />
-	<Hero />
+	<main class="relative">
+		<Hero />
+		<SectionSeparator />
+		<Overview />
+	</main>
 </Layout>
 
 <style>

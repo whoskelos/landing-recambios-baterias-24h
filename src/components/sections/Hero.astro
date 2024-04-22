@@ -1,35 +1,44 @@
 ---
-import PhoneIcon from "@icons/phone.astro";
+import EnlaceBtn from "@components/buttons/EnlaceBtn.astro";
+import LlamaYaBtn from "@components/buttons/LlamaYaBtn.astro";
+import WhatsappIcon from "@icons/whatsapp.astro";
+import { hero } from "src/data/dataHero.json";
+
+const { title, tagline, description } = hero;
 ---
 
 <section
-  class="w-full h-hero bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center gap-4 p-2 md:p-4 lg:p-6"
+  id="inicio"
+  class="relative mx-auto w-full max-w-screen-xl px-6 sm:px-8 lg:px-12 pt-32 pb-16 lg:pt-48"
 >
-  <!-- <div class="logo">
-    <h1
-      class="font-bold text-3xl tracking-widest uppercase text-balance leading-relaxed text-center text-white bg:text-white"
-    >
-      Cambio de Baterías <strong class="text-[#f6c543]">Express</strong> 24H
-    </h1>
-  </div>
   <div
-    class="w-full max-w-[600px] bg-black/50 text-center text-wrap text-xl p-4 text-white bg:text-white"
+    class="mb-1 flex items-center space-x-4 font-mono uppercase text-indigo-500 dark:text-yellow-400 sm:mb-3 animate-fade-in-up duration-1000"
   >
-    <p>
-      Servicio <strong class="text-[#f6c543]">urgente</strong> a domicilio
-    </p>
-    <p><strong>Madrid - Toledo y alrededores</strong></p>
+    <h1>{title}</h1>
+    <span class="text-black/20 dark:text-white/20">///</span>
   </div>
-  <div class="w-full flex justify-center">
-    <a
-      class="text-white text-center bg-yellow-500 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-lg px-5 py-2.5 dark:bg-yellow-500 dark:hover:bg-yellow-500 focus:outline-none dark:focus:ring-yellow-500 uppercase flex items-center gap-x-2"
-      href="tel:+34604974571"
+  <h2
+    class="text-black dark:text-white font-display font-extrabold leading-tight text-3xl sm:text-4xl lg:text-5xl dark:drop-shadow-lg max-w-2xl text-pretty animate-fade-in-up duration-1000 [animation-delay:200ms]"
+  >
+    {tagline}
+  </h2>
+  <p
+    class="paragraph leading-relaxed text-slate-600 dark:text-slate-300 text-lg mt-8 lg:mt-12 max-w-xl animate-fade-in-up duration-1000 [animation-delay:400ms]"
+  >
+    <span set:html={description} />
+  </p>
+  <div class="flex flex-wrap gap-2 mt-8 animate-fade-in duration-1000 [animation-delay:500ms]">
+    <LlamaYaBtn href="tel:+34604974571" />
+    <EnlaceBtn
+      href="https://wa.me/34604974571"
+      title="Hablemos"
+      classColors="bg-[#93edc5] text-slate-800 hover:bg-[#4befa5] dark:bg-[#1a332b] dark:text-slate-50 dark:hover:bg-[#1c3b31]"
     >
-      <span>Llama ya</span>
-      <PhoneIcon
-        size={24}
-        classSvg="icon icon-tabler icons-tabler-outline icon-tabler-phone"
+      <WhatsappIcon
+        size={16}
+        classSvg="fill-current opacity-50 text-green-800 dark:text-green-400 dark:drop-shadow"
+        slot="icon"
       />
-    </a>
-  </div> -->
+    </EnlaceBtn>
+  </div>
 </section>

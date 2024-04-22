@@ -8,6 +8,9 @@ export default {
       height: {
         hero: "calc(100svh - 3.5rem)",
       },
+      backgroundImage: {
+        "gradiennt-radial": "radial-gradient(var(--tw-gradient-stops))",
+      },
     },
   },
   plugins: [animations],

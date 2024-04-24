@@ -1,0 +1,72 @@
+---
+import ThemeDarkIcon from "@icons/theme-icon-dark.astro";
+import ThemeLightIcon from "@icons/theme-icon-light.astro";
+
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<astro-theme-button data-id={id}>
+  <button
+    id={id}
+    type="button"
+    class="flex h-7 items-center rounded-md px-2 text-yellow-500 hover:text-yellow-700 focus:bg-white/30 focus:outline-none dark:text-yellow-400 dark:hover:text-yellow-300 dark:focus:bg-white/10 disabled:opacity-50"
+  >
+    <div class="theme-icon-dark">
+      <ThemeDarkIcon size={20} classSvg="fill-current h-4" />
+    </div>
+    <div class="theme-icon-light">
+      <ThemeLightIcon size={20} classSvg="fill-current h-4" />
+    </div>
+  </button>
+</astro-theme-button>
+
+<script>
+  // comprobar el schema del sistema
+  class ThemeButton extends HTMLElement {
+    constructor() {
+      super();
+      const id = this.dataset.id;
+      const html = document.querySelector("html");
+      const themeButton = document.querySelector(`#${id}`);
+      const themeIconDark = document.querySelector(`#${id} .theme-icon-dark`);
+      const themeIconLight = document.querySelector(`#${id} .theme-icon-light`);
+
+      checkThemeMode();
+
+      // comprueba el tema actual
+      function checkThemeMode() {
+        const theme = localStorage.getItem("theme");
+
+        if (theme === "light") {
+          html.classList.remove("dark");
+          themeIconDark.classList.add("hidden");
+          themeIconLight.classList.remove("hidden");
+        } else if (theme === "dark" || html.classList.contains("dark")) {
+          themeIconDark.classList.remove("hidden");
+          themeIconLight.classList.add("hidden");
+        }
+      }
+
+      // cambiar el tema
+      themeButton.addEventListener("click", () => {
+        if (html.classList.contains("dark")) {
+          html.classList.remove("dark");
+          themeIconDark.classList.add("hidden");
+          themeIconLight.classList.remove("hidden");
+          localStorage.setItem("theme", "light");
+        } else {
+          html.classList.add("dark");
+          themeIconDark.classList.remove("hidden");
+          themeIconLight.classList.add("hidden");
+          localStorage.setItem("theme", "dark");
+        }
+      });
+    }
+  }
+
+  customElements.define("astro-theme-button", ThemeButton);
+</script>

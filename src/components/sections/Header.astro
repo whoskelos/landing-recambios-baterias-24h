@@ -1,7 +1,11 @@
 ---
-import Navbar from "../Navbar.astro";
+import NavDesktop from "@components/nav/desktop/NavDesktop.astro";
+import NavMobile from "@components/nav/mobile/NavMobile.astro";
 ---
 
-<header class="w-full h-14 bg-[#133463] dark:bg-[#133463]">
-    <Navbar />
+<header class="relative">
+  <nav class="relative z-50 w-full pt-4 md:pt-6 lg:pt-10">
+    <NavMobile />
+    <NavDesktop />
+  </nav>
 </header>

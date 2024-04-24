@@ -1,0 +1,25 @@
+---
+import PhoneIcon from "@icons/phone.astro";
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<a
+  href={href}
+  class="group relative h-9 flex-shrink-0 rounded-full bg-gradient-to-b from-yellow-400 to-yellow-500 p-px shadow shadow-yellow-500/25 focus:outline-none focus:ring-1 focus:ring-white/30"
+>
+  <div
+    class="flex h-full items-center justify-center space-x-2 rounded-full bg-yellow-500 text-yellow-50 hover:bg-[#f6c543] font-bold pl-4 pr-2.5 transition-colors duration-200"
+  >
+    <span class="dark:drop-shadow uppercase text-sm">LLama ya</span>
+    <div class="group-hover:animate-sway animate-iteration-count-[2!important]">
+      <PhoneIcon
+        size={16}
+        classSvg="fill-current opacity-50 dark:drop-shadow text-white"
+      />
+    </div>
+  </div>
+</a>

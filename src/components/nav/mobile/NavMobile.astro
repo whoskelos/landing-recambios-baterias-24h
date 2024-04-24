@@ -1,0 +1,20 @@
+---
+import Logo from "../../shared/Logo.astro";
+import MenuMobileBtn from "../../buttons/MenuMobileBtn.astro";
+import MenuMobile from "./MenuMobile.astro";
+---
+
+<div class="fixed top-4 w-full px-4 sm:px-6 md:hidden">
+  <div
+    class="relative z-50 flex h-12 items-center justify-between rounded-3xl border border-slate-200 bg-slate-100/60 pl-5 pr-1.5 shadow-lg shadow-black/5 backdrop-blur-lg dark:border-slate-700 dark:bg-black/70 dark:shadow-black/10"
+  >
+    <Logo />
+    <div class="absolute -bottom-px h-px w-36 overflow-y-hidden">
+      <div class="mx-auto -mt-6 h-12 w-2/3 bg-yellow-200 opacity-50 blur"></div>
+    </div>
+    <div class="flex space-x-2">
+      <MenuMobileBtn />
+    </div>
+  </div>
+  <MenuMobile />
+</div>

@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+
+import DarkBackground from "@assets/background-dark.webp";
+import LightBackground from "@assets/background-light.webp";
+---
+
+<div class="absolute inset-0 pointer-events-none overflow-hidden -z-10">
+  <div
+    class="absolute -top-6 h-screen -left-32 -right-8 sm:left-0 sm:-right-6 blur"
+  >
+    <Image
+      src={DarkBackground}
+      loading="eager"
+      alt="dark background"
+      class="w-full h-auto hidden dark:block animate-fade-in"
+    />
+    <Image
+      src={LightBackground}
+      loading="eager"
+      alt="light background"
+      class="w-full h-auto block dark:hidden hue-rotate-[325deg] animate-fade-in"
+    />
+  </div>
+</div>

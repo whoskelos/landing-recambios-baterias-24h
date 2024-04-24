@@ -1,0 +1,55 @@
+---
+import MenuMobileOpenIcon from "@icons/menu-mobile-open.astro";
+import MenuMobileCloseIcon from "@icons/menu-mobile-close.astro";
+---
+
+<button
+  id="btnMenu"
+  class="relative h-9 flex-shrink-0 rounded-full bg-gradient-to-b from-slate-100 to-slate-200 dark:from-[#393C45] dark:to-[#1A1D24] p-px shadow shadow-black/5 focus:outline-none focus:ring-1 focus:ring-white/20"
+  type="button"
+>
+  <div
+    class="flex h-full items-center justify-center space-x-2 rounded-full bg-[#F9FAFB] text-slate-800 hover:bg-white dark:bg-[#171C23] dark:text-slate-50 dark:hover:bg-[#1E242B] font-bold px-4"
+  >
+    <span class="dark:drop-shadow">
+      <div id="menu-close">
+        <MenuMobileOpenIcon size={24} classSvg="fill-current h-5" />
+      </div>
+      <div id="menu-open" class="hidden">
+        <MenuMobileCloseIcon size={24} classSvg="fill-current h-5" />
+      </div>
+    </span>
+  </div>
+</button>
+
+<script>
+  const btnMenu = document.querySelector("#btnMenu");
+  const openIcon = document.querySelector("#menu-open");
+  const closeIcon = document.querySelector("#menu-close");
+  const backgroundMenu = document.querySelector("#bg-menu");
+  const menu = document.querySelector("#menuMobile");
+
+  const controlMenu = () => {
+    if (menu.classList.contains("hidden")) {
+      menu.classList.remove("hidden");
+      menu.classList.add("flex");
+      setTimeout(() => {
+        menu.classList.remove("opacity-0");
+      }, 50);
+    } else {
+      menu.classList.add("opacity-0");
+      setTimeout(() => {
+        menu.classList.remove("flex");
+        menu.classList.add("hidden");
+      }, 200);
+    }
+  }
+
+  btnMenu.addEventListener("click", () => {
+    openIcon.classList.toggle("hidden");
+    closeIcon.classList.toggle("hidden");
+    document.body.classList.toggle("no-scroll");
+    backgroundMenu.classList.toggle("hidden");
+    controlMenu();
+  });
+</script>

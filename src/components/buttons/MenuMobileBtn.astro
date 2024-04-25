@@ -24,6 +24,7 @@ import MenuMobileCloseIcon from "@icons/menu-mobile-close.astro";
 
 <script>
   const btnMenu = document.querySelector("#btnMenu");
+  const bgMenu = document.querySelector("#bg-menu");
   const openIcon = document.querySelector("#menu-open");
   const closeIcon = document.querySelector("#menu-close");
   const backgroundMenu = document.querySelector("#bg-menu");
@@ -46,6 +47,14 @@ import MenuMobileCloseIcon from "@icons/menu-mobile-close.astro";
   }
 
   btnMenu.addEventListener("click", () => {
+    openIcon.classList.toggle("hidden");
+    closeIcon.classList.toggle("hidden");
+    document.body.classList.toggle("no-scroll");
+    backgroundMenu.classList.toggle("hidden");
+    controlMenu();
+  });
+
+  bgMenu.addEventListener("click", () => {
     openIcon.classList.toggle("hidden");
     closeIcon.classList.toggle("hidden");
     document.body.classList.toggle("no-scroll");

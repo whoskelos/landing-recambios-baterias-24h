@@ -5,6 +5,8 @@ import Hero from '../components/sections/Hero.astro';
 import BlurBackground from '@components/BlurBackground.astro';
 import SectionSeparator from '@components/shared/SectionSeparator.astro';
 import Overview from '@components/sections/Overview.astro';
+import About from '@components/sections/About.astro';
+import FloatMenu from '@components/nav/mobile/FloatMenu.astro';
 ---
 
 <Layout title="Recambio de Baterías Express - Servicio 24 Horas">
@@ -14,7 +16,10 @@ import Overview from '@components/sections/Overview.astro';
 		<Hero />
 		<SectionSeparator />
 		<Overview />
+		<About />
+		<SectionSeparator />
 	</main>
+	<FloatMenu />
 </Layout>
 
 <style>

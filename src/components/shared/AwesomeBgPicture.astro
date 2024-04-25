@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+
+import BgImage from "@assets/img/background-img.webp";
+---
+
+<div class="relative flex flex-col justify-end">
+  <div class="absolute -inset-x-24 bottom-0 overflow-hidden">
+    <div
+      class="absolute -bottom-12 left-1/2 -translate-x-1/2 bg-indigo-400 dark:bg-yellow-400/60 w-3/4 h-1/2 blur-3xl transition-opacity duration-500 opacity-50 group-hover:opacity-80 [border-radius:50%_50%]"
+    >
+    </div>
+    <Image src={BgImage} alt="Fondo de imagen" />
+  </div>
+  <slot name="picture" />
+</div>

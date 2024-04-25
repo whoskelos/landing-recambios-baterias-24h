@@ -1,0 +1,49 @@
+---
+import { Picture } from "astro:assets";
+import AwesomeBgPicture from "@components/shared/AwesomeBgPicture.astro";
+import FurgoImage from "@assets/img/furgo-bolt.webp";
+
+import about from "src/data/about.json";
+const { title, description } = about;
+---
+
+<div class="overflow-x-hidden">
+  <section
+    class="relative mx-auto w-full max-w-screen-xl px-6 sm:px-8 lg:px-12 group pt-24 lg:pt-48 grid grid-cols-1 gap-y-24 md:grid-cols-2"
+  >
+    <div class="md:pr-4 md:pb-8">
+      <h2
+        class="text-black dark:text-white font-display font-extrabold leading-tight text-2xl lg:text-3xl dark:drop-shadow-md undefined flex flex-col text-pretty"
+        set:html={title}
+      />
+      <p
+        class="paragraph leading-relaxed text-slate-600 dark:text-slate-300 text-base mt-7 max-w-lg text-pretty"
+        set:html={description}
+      />
+    </div>
+    <AwesomeBgPicture>
+      <Picture
+        slot="picture"
+        src={FurgoImage}
+        formats={["avif", "webp"]}
+        alt="Furgoneta de servicios de baterías express"
+        class="furgo-image relative w-full aspect-video object-cover [animation-delay:500ms]"
+      />
+    </AwesomeBgPicture>
+  </section>
+</div>
+
+<script>
+  // Observer para animar la imagen de la furgoneta cuando entra al viewport
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      // Si la imagen entra al viewport, añadir la clase de animación
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate-slide-in-right");
+      }
+    });
+  });
+
+  // Observar la imagen de la furgoneta
+  observer.observe(document.querySelector(".furgo-image"));
+</script>

@@ -1,41 +1,29 @@
 ---
 import CardOverview from "@components/shared/CardOverview.astro";
+import SelectIcon from "@icons/select-icon.astro";
 
-import CronometroIcon from "@icons/cronometro.astro";
+import points from "src/data/overview.json";
 ---
 
 <section
+  id="servicios"
   class="relative mx-auto w-full max-w-screen-xl px-6 sm:px-8 lg:px-12 pt-16 lg:pt-24"
 >
   <div
     class="grid grid-cols-1 gap-12 lg:gap-x-16 md:grid-cols-2 lg:grid-cols-3"
   >
-    <CardOverview
-      question="¿Problemas con tu batería y necesitas llegar a tu destino?"
-      answer="Nuestro servicio express de baterías es la solución: ¡en menos de 30 minutos, una batería nueva para continuar sin demoras!"
-    >
-      <CronometroIcon
-        classSvg="fill-current h-7 text-rose-400 dark:text-yellow-400 transition-transform"
-        slot="icon"
-      />
-    </CardOverview>
-    <CardOverview
-      question="¿Problemas con tu batería y necesitas llegar a tu destino?"
-      answer="Nuestro servicio express de baterías es la solución: ¡en menos de 30 minutos, una batería nueva para continuar sin demoras!"
-    >
-      <CronometroIcon
-        classSvg="fill-current h-7 text-rose-400 dark:text-yellow-400 transition-transform"
-        slot="icon"
-      />
-    </CardOverview>
-    <CardOverview
-      question="¿Problemas con tu batería y necesitas llegar a tu destino?"
-      answer="Nuestro servicio express de baterías es la solución: ¡en menos de 30 minutos, una batería nueva para continuar sin demoras!"
-    >
-      <CronometroIcon
-        classSvg="fill-current h-7 text-rose-400 dark:text-yellow-400 transition-transform"
-        slot="icon"
-      />
-    </CardOverview>
+    {
+      points.map(({ icon, question, answer }) => {
+        return (
+          <CardOverview question={question} answer={answer}>
+            <SelectIcon
+              icon={icon}
+              classSvg="fill-current h-7 text-indigo-400 dark:text-yellow-400 transition-transform"
+              slot="icon"
+            />
+          </CardOverview>
+        );
+      })
+    }
   </div>
 </section>

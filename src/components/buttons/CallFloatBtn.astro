@@ -1,0 +1,23 @@
+---
+import PhoneIcon from "@icons/phone.astro";
+interface Props {
+  href?: string;
+}
+
+const { href } = Astro.props;
+---
+
+<a
+  href={href}
+  class="group rounded-full bg-gradient-to-b from-yellow-400/50 to-yellow-500/50 shadow shadow-yellow-500/25 focus:outline-none aspect-square"
+  target="_blank"
+>
+  <div
+    class="flex h-full items-center justify-center rounded-full bg-yellow-500/50 text-yellow-50 hover:bg-[#f6c543]/70 font-bold p-3 transition-colors duration-200 aspect-square"
+  >
+    <PhoneIcon
+      size={25}
+      classSvg="fill-current opacity-50 dark:drop-shadow text-[#1e293b] dark:text-white"
+    />
+  </div>
+</a>

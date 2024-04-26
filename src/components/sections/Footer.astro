@@ -1,0 +1,130 @@
+---
+import { Image } from "astro:assets";
+
+import NegativeLogoSvg from "@assets/svg/negative-logo.svg";
+import LogoSvg from "@assets/svg/logo.svg";
+
+import mapList from "src/data/mapList.json";
+
+const brand = "Baterias Express";
+---
+
+<footer class="pt-3">
+  <div
+    class="relative z-10 mx-auto -mb-8 w-full max-w-screen-xl px-6 sm:px-8 lg:px-12"
+  >
+    <div
+      class="absolute h-16 w-14 bg-white blur-lg dark:bg-[#0E1117] dark:blur-md rounded-50-50"
+    >
+    </div>
+    <Image
+      src={NegativeLogoSvg}
+      alt="logo"
+      class="max-h-16 w-fit object-contain relative hidden dark:block mix-blend-luminosity brightness-50 opacity-70"
+    />
+    <Image
+      src={LogoSvg}
+      alt="logo"
+      class="max-h-16 w-fit object-contain relative dark:hidden mix-blend-darken brightness-80 opacity-60"
+    />
+  </div>
+  <div
+    class="relative border-t border-slate-200 pb-12 dark:border-slate-700 sm:pb-16 md:pb-32"
+  >
+    <div class="absolute inset-0 overflow-hidden">
+      <div
+        class="mx-auto -mt-48 h-96 w-full max-w-screen-xl bg-[#F9FAFB] blur-3xl dark:bg-[#15191F] sm:blur-4xl rounded-50-50"
+      >
+      </div>
+    </div>
+    <div
+      class="relative mx-auto mt-12 flex w-full max-w-screen-xl flex-col items-stretch justify-between px-6 text-sm text-slate-400 dark:text-slate-500 sm:-mt-8 sm:flex-row sm:space-y-0 sm:px-8 lg:px-12"
+    >
+      <div
+        class="order-2 mt-12 sm:order-1 sm:mt-16 flex flex-col justify-between"
+      >
+        <p class="font-mono text-xs uppercase">
+          &copy; {new Date().getFullYear()}
+          {brand}
+        </p>
+      </div>
+      <div class="order-1 flex space-x-8 sm:order-2 sm:space-x-16">
+        <div>
+          <h4
+            class="mb-6 text-xs font-bold uppercase tracking-wider text-indigo-500/70 dark:text-indigo-400/70 sm:mb-12"
+          >
+            Navegación
+          </h4>
+          <ul class="space-y-2">
+            {
+              mapList.map(({ id, title }) => (
+                <li>
+                  <a
+                    class="hover:text-slate-500 dark:hover:text-slate-400"
+                    href={id}
+                  >
+                    {title}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div>
+          <h4
+            class="mb-6 text-xs font-bold uppercase tracking-wider text-indigo-500/70 dark:text-indigo-400/70 sm:mb-12"
+          >
+            Contacto
+          </h4>
+          <ul class="space-y-2">
+            <li>
+              <a
+                class="hover:text-slate-500 dark:hover:text-slate-400"
+                href="tel:+34604974571"
+                target="_blank"
+              >
+                Teléfono
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-slate-500 dark:hover:text-slate-400"
+                href="mailto:recambiosexpressbaterias@gmail.com"
+                target="_blank"
+              >
+                Correo
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            class="mb-6 text-xs font-bold uppercase tracking-wider text-indigo-500/70 dark:text-indigo-400/70 sm:mb-12"
+          >
+            Autores
+          </h4>
+          <ul class="space-y-2">
+            <li>
+              <a
+                class="hover:text-slate-500 dark:hover:text-slate-400"
+                href="https://cv.mretamozo.com/"
+                target="_blank"
+              >
+                Michael Retamozo
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-slate-500 dark:hover:text-slate-400"
+                href="https://cv.kelvinguerrero.dev/"
+                target="_blank"
+              >
+                Kelvin Guerrero
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -21,6 +21,9 @@ export default {
       backgroundImage: {
         "gradiennt-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
+      borderRadius: {
+        "50-50": "50% 50%"
+      }
     },
   },
   plugins: [animations],

@@ -9,6 +9,7 @@ import RayIcon from "@icons/ray.astro";
 import ThemeDarkIcon from "@icons/theme-icon-dark.astro";
 import ThemeLightIcon from "@icons/theme-icon-light.astro";
 import WalletIcon from "@icons/wallet.astro";
+import EmailIcon from "@icons/email.astro";
 
 interface Props {
   icon: string;
@@ -30,4 +31,5 @@ const { icon, size, classSvg } = Astro.props;
     {icon === "theme-icon-dark" && <ThemeDarkIcon size={size} classSvg={classSvg} />}
     {icon === "theme-icon-light" && <ThemeLightIcon size={size} classSvg={classSvg} />}
     {icon === "wallet" && <WalletIcon size={size} classSvg={classSvg} />}
+    {icon === "email" && <EmailIcon size={size} classSvg={classSvg} />}
 </Fragment>

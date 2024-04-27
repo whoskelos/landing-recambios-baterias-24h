@@ -61,4 +61,12 @@ import MenuMobileCloseIcon from "@icons/menu-mobile-close.astro";
     backgroundMenu.classList.toggle("hidden");
     controlMenu();
   });
+
+  menu.querySelector("ul").addEventListener("click", () => {
+    openIcon.classList.toggle("hidden");
+    closeIcon.classList.toggle("hidden");
+    document.body.classList.toggle("no-scroll");
+    backgroundMenu.classList.toggle("hidden");
+    controlMenu();
+  });
 </script>

@@ -1,0 +1,42 @@
+{
+  "mapList": [
+    {
+      "id": "#inicio",
+      "title": "Inicio"
+    },
+    {
+      "id": "#servicios",
+      "title": "Servicios"
+    },
+    {
+      "id": "#contacto",
+      "title": "Contacto"
+    }
+  ],
+  "hero": {
+    "title": "Cambios de baterías express 24h",
+    "tagline": "Energía sin límites, servicio <strong>24/7</strong>, donde y cuando quieras",
+    "description": "¿Tu vehículo no arranca? <strong>Baterías Express ofrece cambio de baterías 24h</strong> en <strong>Madrid, Toledo y alrededores</strong>. ¡<b>Llámanos</b> y te ayudaremos en lo que necesites!"
+  },
+  "overview": [
+    {
+      "icon": "cronometro",
+      "question": "¿Problemas con tu batería y necesitas llegar a tu destino?",
+      "answer": "¡No te preocupes! Nuestro servicio de cambio de batería es rápido y eficiente. En menos de lo que esperas estarás de vuelta en la carretera."
+    },
+    {
+      "icon": "location",
+      "question": "¿Te quedaste sin batería en el lugar menos indicado?",
+      "answer": "¡No te preocupes! Nuestro servicio de asistencia en ruta llega a donde estés para ayudarte a continuar tu viaje."
+    },
+    {
+      "icon": "wallet",
+      "question": "¿Cuánto cuesta el servicio de cambio de batería?",
+      "answer": "El precio de la batería varía según el modelo de tu vehículo. ¡Contáctanos para obtener un presupuesto!"
+    }
+  ],
+  "about": {
+    "title": "<span>Calidad en el servicio</span>",
+    "description": "<span>Baterías de las <strong>mejores marcas</strong> y servicio de primera. Nuestro equipo está comprometido en brindarte un <strong>servicio rápido y eficiente</strong>, sin importar la hora o el lugar.<br/>Tu satisfacción es nuestro compromiso.</span>"
+  }
+}

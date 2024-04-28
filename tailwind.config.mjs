@@ -6,12 +6,21 @@ export default {
   theme: {
     extend: {
       animation: {
-        "fade-scroll": "fade-scroll linear both"
+        "fade-scroll": "fade-scroll linear both",
+        "scroll": "scroll 30s linear infinite",
       },
       keyframes:{
         "fade-scroll": {
           to: {
             opacity: 1,
+          }
+        },
+        "scroll": {
+          "0%": {
+            transform: "translateX(0%)"
+          },
+          "100%": {
+            transform: "translateX(calc(-256px* 8))"
           }
         }
       },
@@ -23,7 +32,7 @@ export default {
       },
       borderRadius: {
         "50-50": "50% 50%"
-      }
+      },
     },
   },
   plugins: [animations],

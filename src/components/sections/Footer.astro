@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import NegativeLogoSvg from "@assets/svg/negative-logo.svg";
 import LogoSvg from "@assets/svg/logo.svg";
 
-import mapList from "src/data/mapList.json";
+import { mapList } from "src/data/data.json";
 
 const brand = "Baterias Express";
 ---
@@ -54,9 +54,8 @@ const brand = "Baterias Express";
         <div>
           <h4
             class="mb-6 text-xs font-bold uppercase tracking-wider text-indigo-500/70 dark:text-indigo-400/70 sm:mb-12"
-          >
-            Navegación
-          </h4>
+            aria-label="Navegación"
+          >Navegación</h4>
           <ul class="space-y-2">
             {
               mapList.map(({ id, title }) => (
@@ -75,9 +74,8 @@ const brand = "Baterias Express";
         <div>
           <h4
             class="mb-6 text-xs font-bold uppercase tracking-wider text-indigo-500/70 dark:text-indigo-400/70 sm:mb-12"
-          >
-            Contacto
-          </h4>
+            aria-label="Contacto"
+          >Contacto</h4>
           <ul class="space-y-2">
             <li>
               <a
@@ -102,15 +100,15 @@ const brand = "Baterias Express";
         <div>
           <h4
             class="mb-6 text-xs font-bold uppercase tracking-wider text-indigo-500/70 dark:text-indigo-400/70 sm:mb-12"
-          >
-            Autores
-          </h4>
+            aria-label="Autores"
+          >Autores</h4>
           <ul class="space-y-2">
             <li>
               <a
                 class="hover:text-slate-500 dark:hover:text-slate-400"
                 href="https://cv.mretamozo.com/"
                 target="_blank"
+                aria-label="Manuel Michael Retamozo García"
               >
                 Michael Retamozo
               </a>
@@ -120,6 +118,7 @@ const brand = "Baterias Express";
                 class="hover:text-slate-500 dark:hover:text-slate-400"
                 href="https://cv.kelvinguerrero.dev/"
                 target="_blank"
+                aria-label="Kelvin Miguel Guerrero Mite"
               >
                 Kelvin Guerrero
               </a>

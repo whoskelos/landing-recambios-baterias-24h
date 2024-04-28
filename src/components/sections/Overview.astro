@@ -2,7 +2,7 @@
 import CardOverview from "@components/shared/CardOverview.astro";
 import SelectIcon from "@icons/select-icon.astro";
 
-import points from "src/data/overview.json";
+import { overview } from "src/data/data.json";
 ---
 
 <section
@@ -13,7 +13,7 @@ import points from "src/data/overview.json";
     class="grid grid-cols-1 gap-12 lg:gap-x-16 md:grid-cols-2 lg:grid-cols-3"
   >
     {
-      points.map(({ icon, question, answer }) => {
+      overview.map(({ icon, question, answer }) => {
         return (
           <CardOverview question={question} answer={answer}>
             <SelectIcon

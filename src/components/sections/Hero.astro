@@ -2,7 +2,7 @@
 import EnlaceBtn from "@components/buttons/EnlaceBtn.astro";
 import LlamaYaBtn from "@components/buttons/LlamaYaBtn.astro";
 import WhatsappIcon from "@icons/whatsapp.astro";
-import { hero } from "src/data/dataHero.json";
+import { hero } from "src/data/data.json";
 
 const { title, tagline, description } = hero;
 ---
@@ -19,15 +19,16 @@ const { title, tagline, description } = hero;
   </div>
   <h2
     class="text-black dark:text-white font-display font-extrabold leading-tight text-3xl sm:text-4xl lg:text-5xl dark:drop-shadow-lg max-w-2xl text-pretty animate-fade-in-up duration-1000 [animation-delay:200ms]"
-  >
-    {tagline}
-  </h2>
+    set:html={tagline}
+  />
   <p
     class="paragraph leading-relaxed text-slate-600 dark:text-slate-300 text-lg mt-8 lg:mt-12 max-w-xl animate-fade-in-up duration-1000 [animation-delay:400ms]"
   >
     <span set:html={description} />
   </p>
-  <div class="flex flex-wrap gap-2 mt-8 animate-fade-in duration-1000 [animation-delay:500ms]">
+  <div
+    class="flex flex-wrap gap-2 mt-8 animate-fade-in duration-1000 [animation-delay:500ms]"
+  >
     <LlamaYaBtn href="tel:+34604974571" />
     <EnlaceBtn
       href="https://wa.me/34604974571"
@@ -44,33 +45,33 @@ const { title, tagline, description } = hero;
 </section>
 
 <style>
-    .logo span {
-        animation: glow 2.5s ease infinite;
-    }
+  .logo span {
+    animation: glow 2.5s ease infinite;
+  }
 
-    @keyframes glow {
-        0%,
-        100% {
-            color: #fff;
-            text-shadow:
-                0 0 12px rgba(255, 0, 0, 0.815),
-                0 0 50px red,
-                0 0 100px red;
-        }
-        10%,
-        90% {
-            color: #fff;
-            text-shadow: none;
-        }
+  @keyframes glow {
+    0%,
+    100% {
+      color: #fff;
+      text-shadow:
+        0 0 12px rgba(255, 0, 0, 0.815),
+        0 0 50px red,
+        0 0 100px red;
     }
+    10%,
+    90% {
+      color: #fff;
+      text-shadow: none;
+    }
+  }
 
-    .logo span:nth-child(2) {
-        animation-delay: 0.25s;
-    }
-    .logo span:nth-child(3) {
-        animation-delay: 0.5s;
-    }
-    .logo span:nth-child(4) {
-        animation-delay: 0.75s;
-    }
+  .logo span:nth-child(2) {
+    animation-delay: 0.25s;
+  }
+  .logo span:nth-child(3) {
+    animation-delay: 0.5s;
+  }
+  .logo span:nth-child(4) {
+    animation-delay: 0.75s;
+  }
 </style>

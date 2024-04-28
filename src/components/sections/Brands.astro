@@ -1,0 +1,73 @@
+---
+import { Image } from "astro:assets";
+
+import TudorBrand from "@assets/img/brands/Tudor.webp";
+import VartaBrand from "@assets/img/brands/Varta.svg";
+import BoschBrand from "@assets/img/brands/bosch.webp";
+import VoltaBrand from "@assets/img/brands/Volta.webp";
+import TabBrand from "@assets/img/brands/Tab.webp";
+import ExideBrand from "@assets/img/brands/Exide.webp";
+import FulmenBrand from "@assets/img/brands/Fulmen.webp";
+import YuasaBrand from "@assets/img/brands/Yuasa.webp";
+
+const brands = [
+  {
+    name: "Tudor logo",
+    image: TudorBrand,
+  },
+  {
+    name: "Varta logo",
+    image: VartaBrand,
+  },
+  {
+    name: "Bosch logo",
+    image: BoschBrand,
+  },
+  {
+    name: "Volta logo",
+    image: VoltaBrand,
+  },
+  {
+    name: "Tab logo",
+    image: TabBrand,
+  },
+  {
+    name: "Exide logo",
+    image: ExideBrand,
+  },
+  {
+    name: "Fulmen logo",
+    image: FulmenBrand,
+  },
+  {
+    name: "Yuasa logo",
+    image: YuasaBrand,
+  },
+];
+
+const duplicatedBrands = [...brands, ...brands];
+---
+
+<section
+  class="relative mx-auto w-full max-w-screen-xl px-6 sm:px-8 lg:px-12 pb-12 lg:pb-16 -mt-4"
+>
+  <div class="relative overflow-x-hidden lg:-mx-16 mask-gradient-awesome">
+    <div>
+      <div class="flex animate-scroll py-4">
+        {
+            duplicatedBrands.map(({ name, image }) => (
+            <div class="shrink-0 relative h-8 w-64 scale-[0.8]">
+                <Image
+                    src={image}
+                    alt={name}
+                    class="object-center object-contain max-h-12 grayscale hover:grayscale-0 transition-transform duration-300 ease-in-out transform hover:scale-110"
+                    width={256}
+                    loading="eager"
+                />
+            </div>
+            ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

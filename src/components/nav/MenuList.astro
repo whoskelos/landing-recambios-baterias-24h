@@ -1,9 +1,9 @@
 ---
-import list from "src/data/mapList.json";
+import { mapList } from "src/data/data.json";
 ---
 
 {
-  list.map(({ id, title }) => {
+  mapList.map(({ id, title }) => {
     return (
       <li class="relative">
         <a

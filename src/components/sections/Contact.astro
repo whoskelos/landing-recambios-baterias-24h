@@ -6,44 +6,61 @@ import SelectIcon from "@icons/select-icon.astro";
 ---
 
 <section
-  id="contacto"
-  class="relative mx-auto w-full max-w-screen-xl px-6 sm:px-8 lg:px-12 group overflow-hidden pb-24 lg:pb-48 flex flex-col items-start lg:items-center pt-16 lg:pt-24"
+    id="contacto"
+    class="relative mx-auto w-full max-w-screen-xl px-6 sm:px-8 lg:px-12 group overflow-hidden pb-24 lg:pb-48 flex flex-col items-start gap-8 lg:items-center pt-16 lg:pt-24"
 >
-  <div
-    class="absolute -top-12 left-1/2 bg-indigo-400 dark:bg-yellow-400/60 w-1/2 h-32 blur-3xl sm:blur-4xl transition-opacity duration-500 opacity-40 group-hover:opacity-60 rounded-50-50 [transform:translate3d(-50%,_0,_0)]"
-  >
-  </div>
-  <h2
-    class="text-black dark:text-white font-display font-extrabold leading-tight text-3xl sm:text-4xl lg:text-5xl dark:drop-shadow-lg lg:text-center"
-  >
-    Confía en nosotros
-  </h2>
-  <p
-    class="paragraph leading-relaxed text-slate-600 dark:text-slate-300 text-base mt-7 mb-8 max-w-lg lg:text-center"
-  >
-    Si tienes alguna duda o necesitas más información, no dudes en contactar con nosotros. Estaremos encantados de ayudarte.
-  </p>
-  <div class="flex flex-wrap gap-2">
-    <LlamaYaBtn href="tel:+34604974571" />
-    <EnlaceBtn
-      href="https://wa.me/34604974571"
-      title="Whatsapp"
-      classColors="bg-[#93edc5] text-slate-800 hover:bg-[#4befa5] dark:bg-[#1a332b] dark:text-slate-50 dark:hover:bg-[#1c3b31]"
-    >
-      <SelectIcon
-        icon="whatsapp"
-        size={16}
-        classSvg="fill-current opacity-50 text-green-800 dark:text-green-400 dark:drop-shadow"
-        slot="icon"
-      />
-    </EnlaceBtn>
-    <EnlaceBtn href="mailto:recambiosexpressbaterias@gmail.com" title="Email">
-      <SelectIcon
-        icon="email"
-        size={16}
-        classSvg="fill-current opacity-50 text-green-800 dark:text-green-400 dark:drop-shadow"
-        slot="icon"
-      />
-    </EnlaceBtn>
-  </div>
+    <div>
+        <div
+            class="absolute -top-12 left-1/2 bg-indigo-400 dark:bg-yellow-400/60 w-1/2 h-32 blur-3xl sm:blur-4xl transition-opacity duration-500 opacity-40 group-hover:opacity-60 rounded-50-50 [transform:translate3d(-50%,_0,_0)]"
+        >
+        </div>
+        <h2
+            class="text-black dark:text-white font-display font-extrabold leading-tight text-3xl sm:text-4xl lg:text-5xl dark:drop-shadow-lg lg:text-center"
+        >
+            Confía en nosotros
+        </h2>
+        <p
+            class="paragraph leading-relaxed text-slate-600 dark:text-slate-300 text-base mt-7 mb-8 max-w-lg lg:text-center"
+        >
+            Si tienes alguna duda o necesitas más información, no dudes en
+            contactar con nosotros. Estaremos encantados de ayudarte.
+        </p>
+        <div class="flex flex-wrap gap-2 items-center justify-center">
+            <LlamaYaBtn href="tel:+34604974571" />
+            <EnlaceBtn
+                href="https://wa.me/34604974571"
+                title="Whatsapp"
+                classColors="bg-[#93edc5] text-slate-800 hover:bg-[#4befa5] dark:bg-[#1a332b] dark:text-slate-50 dark:hover:bg-[#1c3b31]"
+            >
+                <SelectIcon
+                    icon="whatsapp"
+                    size={16}
+                    classSvg="fill-current opacity-50 text-green-800 dark:text-green-400 dark:drop-shadow"
+                    slot="icon"
+                />
+            </EnlaceBtn>
+            <EnlaceBtn
+                href="mailto:recambiosexpressbaterias@gmail.com"
+                title="Email"
+            >
+                <SelectIcon
+                    icon="email"
+                    size={16}
+                    classSvg="fill-current opacity-50 text-green-800 dark:text-green-400 dark:drop-shadow"
+                    slot="icon"
+                />
+            </EnlaceBtn>
+        </div>
+    </div>
+    <div class="w-full grayscale-[50%] hue-rotate-224">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48664.97772983972!2d-3.7545045168208144!3d40.32989712623454!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4221c850fbc121%3A0x32cd3fd693b32de!2srecambios%20las%20margaritas%20getafe!5e0!3m2!1ses!2ses!4v1711316094815!5m2!1ses!2ses"
+        width="100%"
+        height="400"
+        style="border:0;border-radius: 8px;"
+        allowfullscreen=""
+        loading="eager"
+        title="Mapa de ubicación de Recambios Las Margaritas en Getafe, Madrid"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
 </section>

@@ -2,6 +2,9 @@
 import { Picture } from "astro:assets";
 import AwesomeBgPicture from "@components/shared/AwesomeBgPicture.astro";
 import FurgoImage from "@assets/img/furgo-bolt.webp";
+import VartaImage from "@assets/img/batteries/varta_bateria.webp";
+import BoschImage from "@assets/img/batteries/bosch_bateria.webp";
+import TudorImage from "@assets/img/batteries/tudor_bateria.webp";
 
 import { about } from "src/data/data.json";
 const { title, description } = about;
@@ -24,10 +27,26 @@ const { title, description } = about;
     <AwesomeBgPicture>
       <Picture
         slot="picture"
-        src={FurgoImage}
+        src={VartaImage}
         formats={["avif", "webp"]}
-        alt="Furgoneta de servicios de baterías express"
-        class="furgo-image relative w-full aspect-video object-cover [animation-delay:500ms]"
+        alt="Batería Varta"
+        class="battery-image hidden relative w-full aspect-video object-contain [animation-delay:200ms]"
+        loading="eager"
+      />
+      <Picture
+        slot="picture"
+        src={TudorImage}
+        formats={["avif", "webp"]}
+        alt="Batería Tudor"
+        class="battery-image hidden relative w-full aspect-video object-contain [animation-delay:200ms]"
+        loading="eager"
+      />
+      <Picture
+        slot="picture"
+        src={BoschImage}
+        formats={["avif", "webp"]}
+        alt="Batería Bosch"
+        class="battery-image hidden relative w-full aspect-video object-contain [animation-delay:200ms]"
         loading="eager"
       />
     </AwesomeBgPicture>
@@ -35,16 +54,35 @@ const { title, description } = about;
 </div>
 
 <script>
-  // Observer para animar la imagen de la furgoneta cuando entra al viewport
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      // Si la imagen entra al viewport, añadir la clase de animación
-      if (entry.isIntersecting) {
-        entry.target.classList.add("animate-slide-in-right");
-      }
-    });
-  });
+  document.addEventListener("DOMContentLoaded", initializeSlider);
 
-  // Observar la imagen de la furgoneta
-  observer.observe(document.querySelector(".furgo-image"));
+  const slides = document.querySelectorAll(".battery-image");
+  let slideIndex = 0;
+  let intervalId = null;
+
+  function initializeSlider() {
+    if(slides.length > 0) {
+      slides[slideIndex].classList.remove("hidden");
+      slides[slideIndex].classList.add("animate-fade-in-right");
+      intervalId = setInterval(nextSlide,3000);
+    }
+  }
+
+  function showSlide(index) {
+    if (index >= slides.length) {
+      slideIndex = 0;
+    } else if(index < 0){
+      slideIndex = slides.length -1;
+    }
+    slides.forEach(slide => {
+      slide.classList.add("hidden");
+    })
+    slides[slideIndex].classList.remove("hidden");
+    slides[slideIndex].classList.add("animate-fade-in-right");
+  }
+
+  function nextSlide() {
+    slideIndex++;
+    showSlide(slideIndex);
+  }
 </script>

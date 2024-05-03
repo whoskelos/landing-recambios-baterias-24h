@@ -34,9 +34,14 @@ import ThemeToggleBtn from "@components/buttons/ThemeToggleBtn.astro";
   const lightBlurNavbar = document.getElementById("light-blur--navbar");
 
   // seguimiento del mouse en el contenedor del navbar
-  lightBlurNavbarContainer.addEventListener("mousemove", (e) => {
-    const x = e.clientX - lightBlurNavbarContainer.getBoundingClientRect().left;
-    const y = e.clientY - lightBlurNavbarContainer.getBoundingClientRect().top;
-    lightBlurNavbar.style.transform = `translate(${x}px, ${y}px)`;
-  });
+  lightBlurNavbarContainer.addEventListener(
+    "mousemove",
+    (e) => {
+      const { left, top } = lightBlurNavbarContainer.getBoundingClientRect();
+      const x = e.clientX - left;
+      const y = e.clientY - top;
+      lightBlurNavbar.style.transform = `translate(${x}px, ${y}px)`;
+    },
+    { passive: true }
+  );
 </script>

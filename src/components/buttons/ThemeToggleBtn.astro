@@ -29,19 +29,17 @@ const { id } = Astro.props;
 </astro-theme-button>
 
 <script>
-  // comprobar el schema del sistema
   class ThemeButton extends HTMLElement {
     constructor() {
       super();
       const id = this.dataset.id;
       const html = document.querySelector("html");
       const themeButton = document.querySelector(`#${id}`);
-      const themeIconDark = document.querySelector(`#${id} .theme-icon-dark`);
-      const themeIconLight = document.querySelector(`#${id} .theme-icon-light`);
+      const themeIconDark = themeButton.querySelector(".theme-icon-dark");
+      const themeIconLight = themeButton.querySelector(".theme-icon-light");
 
       checkThemeMode();
 
-      // comprueba el tema actual
       function checkThemeMode() {
         const theme = localStorage.getItem("theme");
 
@@ -55,7 +53,6 @@ const { id } = Astro.props;
         }
       }
 
-      // cambiar el tema
       themeButton.addEventListener("click", () => {
         if (html.classList.contains("dark")) {
           html.classList.remove("dark");
@@ -68,7 +65,7 @@ const { id } = Astro.props;
           themeIconLight.classList.add("hidden");
           localStorage.setItem("theme", "dark");
         }
-      });
+      }, { passive: true });
     }
   }
 

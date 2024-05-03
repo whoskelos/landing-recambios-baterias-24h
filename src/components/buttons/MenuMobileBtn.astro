@@ -47,29 +47,19 @@ import MenuMobileCloseIcon from "@icons/menu-mobile-close.astro";
         menu.classList.add("hidden");
       }, 200);
     }
-  }
+  };
 
-  btnMenu.addEventListener("click", () => {
+  const toggleMenu = () => {
     openIcon.classList.toggle("hidden");
     closeIcon.classList.toggle("hidden");
     document.body.classList.toggle("no-scroll");
     backgroundMenu.classList.toggle("hidden");
     controlMenu();
-  });
+  };
 
-  bgMenu.addEventListener("click", () => {
-    openIcon.classList.toggle("hidden");
-    closeIcon.classList.toggle("hidden");
-    document.body.classList.toggle("no-scroll");
-    backgroundMenu.classList.toggle("hidden");
-    controlMenu();
-  });
-
-  menu.querySelector("ul").addEventListener("click", () => {
-    openIcon.classList.toggle("hidden");
-    closeIcon.classList.toggle("hidden");
-    document.body.classList.toggle("no-scroll");
-    backgroundMenu.classList.toggle("hidden");
-    controlMenu();
-  });
+  btnMenu.addEventListener("click", toggleMenu, { passive: true });
+  bgMenu.addEventListener("click", toggleMenu, { passive: true });
+  menu
+    .querySelector("ul")
+    .addEventListener("click", toggleMenu, { passive: true });
 </script>
